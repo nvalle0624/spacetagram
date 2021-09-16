@@ -1,32 +1,28 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{%static 'base.css'%}">
 <script src="{% static 'likeAction.js' %}"></script>
-<h1>Homepage</h1>
+<h1 class="page-header">Homepage</h1>
 
-
-
-
-<form method='POST' action="">
+<form method='POST' action="" class="search-form">
 {% csrf_token %}
 {{form.as_p}}
-<input type="submit" value="Search">
+<input type="submit" value="Search" class="search-btn">
 </form>
-
 
 <div class="results-container">
 
-  <h2>Search Results:</h2>
-<!-- {{res}} -->
+  <h2 class="search-header">Search Results:</h2>
+
 {% for result in all_results%}
 <div class="search-result">
-  <!-- {{result}} -->
 
-<image src="{{result.0.links.0.href}}"></image>
+<image src="{{result.0.links.0.href}}" class="image"></image>
 
 <button onclick="handleLike(event)" id="{{result.0.links.0.href}}" class="like-btn{{result.1}}">Like</button>
-<a href="{{result.0.links.0.href}}">image</a>
+<a href="{{result.0.links.0.href}}" class="image-link">image</a>
 <h3>{{result.0.data.0.title}}</h3>
-<p>{{result.0.data.0.description}}</p>
+<p class="date">Date: {{result.0.data.0.date_created.0}}{{result.0.data.0.date_created.1}}{{result.0.data.0.date_created.2}}{{result.0.data.0.date_created.3}}{{result.0.data.0.date_created.4}}{{result.0.data.0.date_created.5}}{{result.0.data.0.date_created.6}}{{result.0.data.0.date_created.7}}{{result.0.data.0.date_created.8}}{{result.0.data.0.date_created.9}}</p>
+<p class="description">{{result.0.data.0.description}}</p>
 </div>
 <br>
 {% endfor %}
