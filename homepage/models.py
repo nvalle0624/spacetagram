@@ -5,3 +5,4 @@ from django.db import models
 
 class Favorites(models.Model):
     image_url = models.URLField()
+    id = models.CharField(max_length=500, primary_key=True)

@@ -20,3 +20,16 @@ def api_add_favorite_view(request):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(['DELETE', ])
+def api_delete_favorite_view(request, image_url: str):
+    favorite = Favorites.objects.get(id=image_url)
+    if request.method == 'DELETE':
+        operation = favorite.delete()
+        data = {}
+        if operation:
+            data['success'] = "delete successfull"
+        else:
+            data["failure"] = "delete failed"
+        return Response(data=data)

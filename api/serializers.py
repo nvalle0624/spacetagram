@@ -8,4 +8,5 @@ class FavoritesSerializer(ModelSerializer):
         model = Favorites
         fields = [
             "image_url",
+            "id"
         ]
