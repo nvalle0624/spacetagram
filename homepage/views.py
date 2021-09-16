@@ -1,6 +1,7 @@
 from django.shortcuts import render
 import requests
-from homepage.forms import SearchForm
+from homepage.forms import SearchForm, LikeForm
+
 from decouple import config
 # Create your views here.
 
@@ -9,6 +10,8 @@ API_KEY = config('API_KEY')
 
 
 def home(req):
+    def handleLike():
+        print("test passed")
     if req.method == "POST":
         form = SearchForm(req.POST)
         if form.is_valid():
@@ -20,9 +23,9 @@ def home(req):
             all_results = []
             res = res.json()["collection"]['items']
             for item in res:
-
                 all_results.append(item)
-            return render(req, "homepage.html", {"form": form, "all_results": all_results})
+            likeForm = LikeForm()
+            return render(req, "homepage.html", {"form": form, "all_results": all_results, 'likeForm': likeForm})
 
     form = SearchForm()
     return render(req, "homepage.html", {"form": form})

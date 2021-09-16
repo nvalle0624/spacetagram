@@ -1,6 +1,6 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{%static 'base.css'%}">
-
+<script src="{% static 'likeAction.js' %}"></script>
 <h1>Homepage</h1>
 
 
@@ -18,13 +18,14 @@
   <h2>Search Results:</h2>
 <!-- {{res}} -->
 {% for result in all_results%}
-<div class="search-result" >
+<div class="search-result">
   <!-- {{result}} -->
-<h3>{{result.data.0.title}}</h3>
-<p>{{result.data.0.description}}</p>
 
 <image src="{{result.links.0.href}}"></image>
+<button onclick="handleLike(event)" id="{{result.links.0.href}}" class="like-btn">Like</button>
 <a href="{{result.links.0.href}}">image</a>
+<h3>{{result.data.0.title}}</h3>
+<p>{{result.data.0.description}}</p>
 </div>
 <br>
 {% endfor %}

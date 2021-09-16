@@ -4,3 +4,34 @@
   display: flex;
   flex-direction: column;
 }
+
+.search-result {
+  display: flex;
+  flex-direction: column;
+  background-color: aquamarine;
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 500px;
+  margin: auto;
+}
+
+image {
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.like-form {
+  width: 100px;
+  background-color: red;
+}
+
+label {
+  display: none;
+}
+#id_like {
+  width: 100px;
+}
+
+.like-btn.liked {
+  background-color: red;
+}
