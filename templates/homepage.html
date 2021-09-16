@@ -21,12 +21,12 @@
 <div class="search-result">
   <!-- {{result}} -->
 
-<image src="{{result.links.0.href}}"></image>
+<image src="{{result.0.links.0.href}}"></image>
 
-<button onclick="handleLike(event)" id="{{result.links.0.href}}" class="like-btn">Like</button>
-<a href="{{result.links.0.href}}">image</a>
-<h3>{{result.data.0.title}}</h3>
-<p>{{result.data.0.description}}</p>
+<button onclick="handleLike(event)" id="{{result.0.links.0.href}}" class="like-btn{{result.1}}">Like</button>
+<a href="{{result.0.links.0.href}}">image</a>
+<h3>{{result.0.data.0.title}}</h3>
+<p>{{result.0.data.0.description}}</p>
 </div>
 <br>
 {% endfor %}

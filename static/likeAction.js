@@ -19,10 +19,10 @@ const csrftoken = getCookie("csrftoken");
 const handleLike = (event) => {
   console.log("button and js work!");
   console.log(event.currentTarget.id);
-  if (!event.currentTarget.className.includes(" liked")) {
-    event.currentTarget.className += " liked";
+  if (!event.currentTarget.className.includes(" favorite")) {
+    event.currentTarget.className += " favorite";
   } else {
-    event.currentTarget.className = event.currentTarget.className.replace(" liked", "");
+    event.currentTarget.className = event.currentTarget.className.replace(" favorite", "");
   }
   const imageURL = event.currentTarget.id;
   fetch("http://localhost:8000/api/favorites/", {

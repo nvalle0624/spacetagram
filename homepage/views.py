@@ -1,6 +1,7 @@
 from django.shortcuts import render
 import requests
 from homepage.forms import SearchForm, LikeForm
+from homepage.models import Favorites
 
 from decouple import config
 # Create your views here.
@@ -10,6 +11,13 @@ API_KEY = config('API_KEY')
 
 
 def home(req):
+    all_favorites = Favorites.objects.all()
+    favorites_urls = []
+    for u in all_favorites:
+        favorites_urls.append(u.image_url)
+    print("favs:")
+    print(favorites_urls)
+
     def handleLike():
         print("test passed")
     if req.method == "POST":
@@ -23,7 +31,14 @@ def home(req):
             all_results = []
             res = res.json()["collection"]['items']
             for item in res:
-                all_results.append(item)
+                href = item['links'][0]['href']
+                isFavorite = ''
+                if(href in favorites_urls):
+                    print(href)
+                    print("match!")
+                    isFavorite = ' favorite'
+
+                all_results.append([item, isFavorite])
             likeForm = LikeForm()
             return render(req, "homepage.html", {"form": form, "all_results": all_results, 'likeForm': likeForm})
 
