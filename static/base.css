@@ -1,37 +1,117 @@
+* {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+.page-container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #3c3942;
+}
+
+.search-form,
+.search-header,
+.page-header,
+.search-result {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-container {
+}
+
+#scroll-btn {
+  display: block;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 40px;
+  border: none;
+  outline: none;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  cursor: pointer;
+
+  border-radius: 4px;
+}
+
+#scroll-button:hover {
+  background-color: #555;
+}
+
 .results-container {
-  background-color: lightblue;
+  background-color: #9791a8;
   width: 100%;
   display: flex;
   flex-direction: column;
 }
 
 .search-result {
-  display: flex;
-  flex-direction: column;
-  background-color: aquamarine;
+  background-color: #bab2cf;
   border: 1px solid black;
-  border-radius: 10px;
+  border-radius: 2px;
   width: 500px;
   margin: auto;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.473);
 }
 
-image {
+.image-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 2px;
 }
 
-.like-form {
-  width: 100px;
-  background-color: red;
+.btn-container {
+  display: flex;
+  width: 100%;
 }
 
-label {
-  display: none;
+.like-btn {
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 2px;
+  color: black;
+  padding: 10px 27px;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  font-size: 16px;
 }
-#id_like {
-  width: 100px;
+
+.like-btn:hover {
+  background-color: blue;
 }
 
 .like-btn.favorite {
   background-color: red;
+}
+
+.like-btn.favorite:hover {
+  background-color: blue;
+}
+
+body > form > p {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5%;
 }

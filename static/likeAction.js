@@ -5,7 +5,6 @@ function getCookie(name) {
     const cookies = document.cookie.split(";");
     for (let i = 0; i < cookies.length; i++) {
       const cookie = cookies[i].trim();
-      // Does this cookie string begin with the name we want?
       if (cookie.substring(0, name.length + 1) === name + "=") {
         cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
         break;
@@ -50,3 +49,16 @@ const handleLike = async (event) => {
     console.log("deleted");
   }
 };
+
+function handleScroll() {
+  // document.body.scrollTop = 0;
+  // document.documentElement.scrollTop = 0;
+  const slideVar = setInterval(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+    window.clearInterval(slideVar);
+  }, 350);
+}
