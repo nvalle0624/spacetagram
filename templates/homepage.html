@@ -1,28 +1,35 @@
 {% load static %}
 {% load bootstrap4 %}
 {% load bootstrap_icons %}
+<script src="{% static 'likeAction.js' %}"></script>
 <link rel="stylesheet" type="text/css" href="{%static 'base.css'%}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
-<script src="{% static 'likeAction.js' %}"></script>
 
+<video autoplay muted loop id="myVideo">
+  <!-- Video by <a href="https://pixabay.com/users/mikkehouse-3374228/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=25047">mike lacoste</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=25047">Pixabay</a> -->
+  <source src="{% static 'Nebula - 25047.mp4'%}" type="video/mp4">
+</video>
 <div class="page-container">
   <button onclick="handleScroll()" id="scroll-btn"> {% bs_icon 'arrow-up-square' size='1.5em'%}</button>
   <div class="header-container">
 <h1 class="page-header">Spacetagram</h1>
+<h2 class="page-header">Search for NASA images and save the ones you like!</h2>
 </div>
 
-<form method='POST' action="" class="search-form">
-{% csrf_token %}
-{{form.as_p}}
-<input type="submit" value="Search" class="search-btn">
-</form>
+
+
 
 <div class="results-container">
-
-  <h2 class="search-header">Search Results:</h2>
-
+  <div class="search-container">
+    <form method='POST' action="" class="search-form">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Search" class="search-btn">
+    </form>
+    </div>
+<h2 class="search-header">Search Results:</h2>
 {% for result in all_results%}
 <div class="search-result">
 <div class="image-container">
@@ -35,7 +42,7 @@
 <p class="description">{{result.0.data.0.description}}</p>
 
 <div class="btn-container">
-  <button onclick="handleLike(event)" id="{{result.0.links.0.href}}" class="like-btn{{result.1}}">Like</button>
+  <button onclick="handleLike(event)" id="{{result.0.links.0.href}}" class="like-btn{{result.1}}">{% bs_icon 'heart-fill' size='6em'%}</button>
   </div>
 </div>
 

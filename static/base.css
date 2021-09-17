@@ -8,7 +8,7 @@
   width: 100%;
   flex-direction: column;
   justify-content: center;
-  background-color: #3c3942;
+  background-color: #00000000;
 }
 
 .search-form,
@@ -22,6 +22,32 @@
 }
 
 .header-container {
+  height: 300px;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+}
+
+.page-header {
+  margin: 10%;
+}
+
+.search-form {
+  background-color: #ede8f6;
+  padding: 2%;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.search-container {
+  width: 100%;
+  margin-top: 5%;
+}
+.search-header {
+  color: white;
+}
+.search-result {
+  margin-bottom: 100%;
+  height: 100%;
 }
 
 #scroll-btn {
@@ -45,10 +71,10 @@
 }
 
 .results-container {
-  background-color: #9791a8;
   width: 100%;
   display: flex;
   flex-direction: column;
+  margin-bottom: 100%;
 }
 
 .search-result {
@@ -73,15 +99,18 @@
 
 .btn-container {
   display: flex;
+  justify-content: center;
   width: 100%;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .like-btn {
   border: none;
-  width: 100%;
+  width: fit-content;
   cursor: pointer;
   border-radius: 2px;
-  color: black;
+  color: white;
+  background-color: rgba(0, 0, 0, 0);
   padding: 10px 27px;
   text-align: center;
   text-decoration: none;
@@ -91,15 +120,15 @@
 }
 
 .like-btn:hover {
-  background-color: blue;
+  color: red;
 }
 
 .like-btn.favorite {
-  background-color: red;
+  color: red;
 }
 
 .like-btn.favorite:hover {
-  background-color: blue;
+  color: red;
 }
 
 body > form > p {
@@ -114,4 +143,13 @@ body > form > p {
   justify-content: center;
   align-items: center;
   margin: 5%;
+}
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
 }
