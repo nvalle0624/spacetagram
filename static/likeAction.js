@@ -50,9 +50,14 @@ const handleLike = async (event) => {
   }
 };
 
+window.onclick = function (event) {
+  let vid = document.getElementById("myVideo");
+  vid.muted = false;
+};
+
 function handleScroll() {
-  // document.body.scrollTop = 0;
-  // document.documentElement.scrollTop = 0;
+  vid = document.getElementById("myVideo");
+  vid.muted = false;
   const slideVar = setInterval(() => {
     window.scrollTo({
       top: 0,
