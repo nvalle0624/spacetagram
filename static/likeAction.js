@@ -21,7 +21,7 @@ const handleLike = async (event) => {
   console.log(event.currentTarget.id);
   if (!event.currentTarget.className.includes(" favorite")) {
     event.currentTarget.className += " favorite";
-    fetch("https://spacetagram.xyz/api/favorites/", {
+    fetch("https://localhost:8000/api/favorites/", {
       method: "POST",
       body: JSON.stringify({
         image_url: await imageURL,
@@ -34,7 +34,7 @@ const handleLike = async (event) => {
     }).then((results) => results.json());
   } else {
     event.currentTarget.className = event.currentTarget.className.replace(" favorite", "");
-    let url = "https://spacetagram.xyz/api/delete" + "/" + imageURL.replace(/[\/https:\.]/g, "");
+    let url = "https://localhost:8000/api/delete" + "/" + imageURL.replace(/[\/https:\.]/g, "");
     fetch(url, {
       method: "DELETE",
       body: JSON.stringify({
