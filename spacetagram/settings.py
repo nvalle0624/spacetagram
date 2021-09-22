@@ -27,7 +27,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['178.128.147.232', '.spacetagram.xyz']
+ALLOWED_HOSTS = ['178.128.147.232', '.spacetagram.xyz', 'localhost']
 
 # add back to allowed hosts: '178.128.147.232', '.spacetagram.xyz'
 
