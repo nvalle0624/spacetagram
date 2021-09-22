@@ -29,6 +29,8 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['178.128.147.232', '.spacetagram.xyz']
 
+# add back to allowed hosts: '178.128.147.232', '.spacetagram.xyz'
+
 CORS_ORIGIN_ALLOW_ALL = 'ALL'
 CORS_ALLOW_METHODS = (
     'GET',
@@ -136,7 +138,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = STATIC_URL
+STATIC_ROOT = '/var/www/spacetagram.xyz/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]

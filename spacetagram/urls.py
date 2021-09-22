@@ -17,12 +17,14 @@ from django.contrib import admin
 from django.urls import path
 from homepage import views
 from api.urls import urlpatterns as api_urls
+from django.conf.urls.static import static
+from django.conf import settings
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
     path('favorites/', views.favorites, name='favorites')
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 urlpatterns += api_urls
