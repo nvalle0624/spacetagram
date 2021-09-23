@@ -189,3 +189,13 @@ body > form > p {
   min-height: 100%;
   z-index: -1;
 }
+
+@media (max-width: 767px) {
+  #myVideo {
+    display: none;
+  }
+  body {
+    background: url("nebulaIMG.png");
+    background-size: cover;
+  }
+}
