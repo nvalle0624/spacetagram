@@ -52,16 +52,12 @@ const handleLike = async (event) => {
 
 window.onclick = function (event) {
   let vid = document.getElementById("myVideo");
-  if (vid.style.display == "none") {
-    vid.muted = false;
-  }
+  vid.muted = false;
 };
 
 function handleScroll() {
   vid = document.getElementById("myVideo");
-  if (vid.style.display == "none") {
-    vid.muted = false;
-  }
+  vid.muted = false;
   const slideVar = setInterval(() => {
     window.scrollTo({
       top: 0,
