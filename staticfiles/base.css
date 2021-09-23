@@ -190,12 +190,20 @@ body > form > p {
   z-index: -1;
 }
 
+#myIMG {
+  display: none;
+}
+
 @media (max-width: 767px) {
   #myVideo {
     display: none;
   }
-  body {
-    background: url("nebulaIMG.png");
-    background-size: cover;
+  #myIMG {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
   }
 }
