@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="{%static 'base.css'%}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 
 <video autoplay muted loop id="myVideo">
   <!-- Video by <a href="https://pixabay.com/users/mikkehouse-3374228/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=25047">mike lacoste</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=25047">Pixabay</a> -->
@@ -36,7 +36,7 @@
 <image src="{{result.0.links.0.href}}" class="image"></image>
 </div>
 
-<a href="{{result.0.links.0.href}}" class="image-link">go to image</a>
+<a href="{{result.0.links.0.href}}" class="image-link" target="_blank">go to image</a>
 <h3>{{result.0.data.0.title}}</h3>
 <div class="info-container">
 <p class="date">Date: {{result.0.data.0.date_created.0}}{{result.0.data.0.date_created.1}}{{result.0.data.0.date_created.2}}{{result.0.data.0.date_created.3}}{{result.0.data.0.date_created.4}}{{result.0.data.0.date_created.5}}{{result.0.data.0.date_created.6}}{{result.0.data.0.date_created.7}}{{result.0.data.0.date_created.8}}{{result.0.data.0.date_created.9}}</p>
